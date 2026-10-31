@@ -1,4 +1,5 @@
 import React from "react";
+import Countdown from "../Universal/Countdown";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -19,17 +20,6 @@ const NewItems = () => {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
-
-  const calculateCountdown = (expiryDate, now) => {
-    const expiry = new Date(expiryDate).getTime();
-    const difference = expiry - now;
-    if (difference <= 0) return "Expired";
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  };
 
   useEffect(() => {
     let active = true;
@@ -105,7 +95,10 @@ const NewItems = () => {
                     <i className="fa fa-check"></i>
                   </Link>
                 </div>
-                {item.expiryDate && <div className="de_countdown">{calculateCountdown(item.expiryDate, now)}</div>}
+                {item.expiryDate &&
+                <div className="de_countdown">
+                  <Countdown expiryDate={item.expiryDate} now={now} />
+                </div>}
 
                 <div className="nft__item_wrap">
                   <div className="nft__item_extra">
