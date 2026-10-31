@@ -96,6 +96,33 @@
   min-height: 310px;
 }
 
+/* Top Sellers skeleton layout */
+
+.author_list li .skeleton-avatar {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.author_list li .skeleton-title {
+  display: block;
+  width: 120px;
+  height: 18px;
+  margin: 4px 0 10px;
+}
+
+.author_list li .skeleton-subtitle {
+  display: block;
+  width: 75px;
+  height: 12px;
+  margin: 0;
+}
+
+.author_list li .author_list_info {
+  min-height: 50px;
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .skeleton::after {
