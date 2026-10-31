@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
+    <>
+      <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
     <Router>
       <Nav />
       <Routes>
@@ -18,6 +20,9 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+<script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    </>
   );
 }
 

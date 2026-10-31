@@ -22,6 +22,114 @@
   --title-font: "DM Sans", Helvetica, Arial, sans-serif;
 }
 
+.owl-carousel:not(.owl-loaded) {
+  display: block;
+}
+
+.owl-carousel:not(.owl-loaded) .item {
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+}
+
+/* Base skeleton */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #e0e0e0;
+  border-radius: 6px;
+}
+
+/* Shimmer animation */
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+
+  transform: translateX(-100%);
+  animation: skeleton-shimmer 1.5s infinite;
+}
+
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* NFT image placeholder */
+.skeleton-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+}
+
+/* Author avatar placeholder */
+.skeleton-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* Collection title placeholder */
+.skeleton-title {
+  width: 65%;
+  height: 18px;
+  margin: 12px auto 8px;
+}
+
+/* Collection code placeholder */
+.skeleton-subtitle {
+  width: 40%;
+  height: 12px;
+  margin: 0 auto 12px;
+}
+
+/* Keep card dimensions consistent */
+.skeleton-card {
+  min-height: 310px;
+}
+
+/* Top Sellers skeleton layout */
+
+.author_list li .skeleton-avatar {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.author_list li .skeleton-title {
+  display: block;
+  width: 120px;
+  height: 18px;
+  margin: 4px 0 10px;
+}
+
+.author_list li .skeleton-subtitle {
+  display: block;
+  width: 75px;
+  height: 12px;
+  margin: 0;
+}
+
+.author_list li .author_list_info {
+  min-height: 50px;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after {
+    animation: none;
+  }
+}
+
 /* ================================================== */
 
 /* body */
