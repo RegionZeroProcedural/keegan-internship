@@ -1,13 +1,11 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react"; 
 
 import Aos from "aos";
 import 'aos/dist/aos.css'; 
 
 const AuthorItems = ({ authors, loading}) => {
-  const { authorId } = useParams();
   const [likedNfts, setLikedNfts] = useState([]);
-  const author = authors;
   const nfts = authors?.nftCollection ?? [];
 
       const showPlaceholders = loading;

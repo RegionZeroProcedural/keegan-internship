@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Countdown({ expiryDate, now }) {
   const calculateCountdown = (expiryDate, now) => {
       const expiry = new Date(expiryDate).getTime();
