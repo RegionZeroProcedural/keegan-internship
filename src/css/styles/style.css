@@ -22,6 +22,229 @@
   --title-font: "DM Sans", Helvetica, Arial, sans-serif;
 }
 
+.owl-carousel:not(.owl-loaded) {
+  display: block;
+}
+
+.owl-carousel:not(.owl-loaded) .item {
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+}
+
+/* Base skeleton */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #e0e0e0;
+  border-radius: 6px;
+}
+
+/* Shimmer animation */
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+
+  transform: translateX(-100%);
+  animation: skeleton-shimmer 1.5s infinite;
+}
+
+/* Explore NFT skeletons */
+
+.d-item .nft__item .skeleton-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.d-item .nft__item .skeleton-image {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border-radius: 8px;
+}
+
+.d-item .nft__item .skeleton-title {
+  width: 75%;
+  height: 20px;
+  margin: 12px 0;
+}
+
+.d-item .nft__item .skeleton-subtitle {
+  width: 45%;
+  height: 15px;
+  margin: 8px 0;
+}
+
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* NFT image placeholder */
+.skeleton-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+}
+
+/* Author avatar placeholder */
+.skeleton-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* Collection title placeholder */
+.skeleton-title {
+  width: 65%;
+  height: 18px;
+  margin: 12px auto 8px;
+}
+
+/* Collection code placeholder */
+.skeleton-subtitle {
+  width: 40%;
+  height: 12px;
+  margin: 0 auto 12px;
+}
+
+/* Keep card dimensions consistent */
+.skeleton-card {
+  min-height: 310px;
+}
+
+/* Top Sellers skeleton layout */
+
+.author_list li .skeleton-avatar {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.author_list li .skeleton-title {
+  display: block;
+  width: 120px;
+  height: 18px;
+  margin: 4px 0 10px;
+}
+
+.author_list li .skeleton-subtitle {
+  display: block;
+  width: 75px;
+  height: 12px;
+  margin: 0;
+}
+
+.author_list li .author_list_info {
+  min-height: 50px;
+}
+
+.nft__item_like {
+  cursor: pointer;
+}
+
+.nft__item_like.liked i {
+  color: #ff3b6b;
+}
+
+/* Author profile skeleton loading state */
+
+.profile_avatar > .skeleton-avatar {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 3px;
+}
+
+/* Author name */
+.profile_name .skeleton-title {
+  display: block;
+  width: 180px;
+  height: 24px;
+  margin: 0 0 12px;
+}
+
+/* Username */
+.profile_name .skeleton-subtitle {
+  display: block;
+  width: 120px;
+  height: 16px;
+  margin: 0 0 12px;
+}
+
+/* Wallet */
+.profile_wallet .skeleton-text {
+  display: block;
+  width: 220px;
+  height: 16px;
+}
+
+/* Copy button */
+.profile_name > .skeleton-button {
+  display: block;
+  width: 65px;
+  height: 30px;
+  margin-top: 12px;
+  border-radius: 6px;
+}
+
+/* Follower count */
+.profile_follower .skeleton-text {
+  display: block;
+  width: 110px;
+  height: 16px;
+}
+
+/* Follow button */
+.profile_follow .skeleton-button {
+  display: block;
+  width: 100px;
+  height: 36px;
+  margin-top: 12px;
+  border-radius: 6px;
+}
+
+/* Hide text inside skeletons while preserving their dimensions */
+.skeleton {
+  color: transparent !important;
+}
+
+/* Hide nested text and icons */
+.skeleton:not(.skeleton-button) * {
+  color: transparent !important;
+}
+
+/* Item Details skeleton avatars */
+.item_author .author_list_pp {
+  position: relative;
+}
+
+.item_author .skeleton-avatar {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after {
+    animation: none;
+  }
+}
+
 /* ================================================== */
 
 /* body */
