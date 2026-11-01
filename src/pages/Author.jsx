@@ -23,6 +23,7 @@ const Author = () => {
   }, [loading]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     Aos.init();
     let active = true;
 
